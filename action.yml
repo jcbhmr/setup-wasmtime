@@ -1,0 +1,18 @@
+name: Setup Wasmtime 2
+description: "Set up your GitHub Actions workflow with a specific version of wasmtime"
+
+inputs:
+  wasmtime-version:
+    description: Which version of Wasmtime to install. This can be an exact version specifier such as '16.0.0' or a semver range like '~16.0.0' or '16.x'. Use 'latest' to always install the latest release. Defaults to 'latest'.
+    default: latest
+  wasmtime-token:
+    description: The GitHub token to use when fetching the version list from bytecodealliance/wasmtime. You shouldn't have to touch this. The default is the 'github.token' if you're on github.com or unauthenticated (rate limited) if you're not on github.com.
+    default: ${{ github.server_url == 'https://github.com' && github.token || '' }}
+
+  # Backwards compat
+  version: {}
+  github_token: {}
+
+runs:
+  using: node20
+  main: dist/main.js
