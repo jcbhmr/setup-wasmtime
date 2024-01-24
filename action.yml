@@ -1,5 +1,5 @@
 name: Setup Wasmtime
-description: 🧑‍💻 Wasmtime WebAssembly runtime installer for GitHub Actions
+description: 👩‍💻 Wasmtime WebAssembly runtime installer for GitHub Actions
 
 branding:
   icon: play
