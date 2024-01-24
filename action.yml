@@ -2,7 +2,7 @@ name: Setup Wasmtime
 description: 🧑‍💻 Wasmtime WebAssembly runtime installer for GitHub Actions
 
 branding:
-  icon: arrow-down
+  icon: play
   color: blue
 
 inputs:
