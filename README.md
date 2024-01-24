@@ -2,7 +2,24 @@
 
 🧑‍💻 [Wasmtime](https://wasmtime.dev/) WebAssembly runtime installer for GitHub Actions
 
+<table align=center><td>
+
+```yml
+- uses: jcbhmr/setup-wasmtime@v2
+- run: cargo build --target wasm32-wasi
+- run: wasmtime target/wasm32-wasi/debug/*.wasm
+```
+
+</table>
+
+🟪 Installs Wasmtime globally \
+🔢 Supports semver ranges \
+📁 Caches the Wasmtime installation
+
 ## Usage
+
+![GitHub Actions](https://img.shields.io/static/v1?style=for-the-badge&message=GitHub+Actions&color=2088FF&logo=GitHub+Actions&logoColor=FFFFFF&label=)
+![GitHub](https://img.shields.io/static/v1?style=for-the-badge&message=GitHub&color=181717&logo=GitHub&logoColor=FFFFFF&label=)
 
 **🚀 Here's what you're after:**
 
@@ -13,11 +30,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: jcbhmr/setup-wasmtime@v2.0.0-rc.2
-        with:
-          wasmtime-version: "15.x"
+      - uses: jcbhmr/setup-wasmtime@v2
       - run: cargo build --target wasm32-wasi
-      - run: wasmtime target/wasm32-wasi/debug/hello_world.wasm
+      - run: wasmtime target/wasm32-wasi/debug/*.wasm
 ```
 
 ### Inputs
@@ -28,4 +43,7 @@ jobs:
 
 ## Development
 
-TODO: Add development section
+![Node.js](https://img.shields.io/static/v1?style=for-the-badge&message=Node.js&color=339933&logo=Node.js&logoColor=FFFFFF&label=)
+
+**How do I test my changes?** \
+Open a Draft Pull Request and some magic GitHub Actions will run to test the action.
