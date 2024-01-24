@@ -13,6 +13,12 @@ inputs:
   version: {}
   github_token: {}
 
+outputs:
+  typst-version:
+    description: The version of Wasmtime that was installed. This will be something like '16.0.0' or similar.
+  cache-hit:
+    description: Whether or not Wasmtime was restored from the runner's cache or download anew.
+
 runs:
   using: node20
   main: dist/main.js
