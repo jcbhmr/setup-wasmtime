@@ -6,7 +6,7 @@ import * as semver from "semver";
 import * as github from "@actions/github";
 import { createUnauthenticatedAuth } from "@octokit/auth-unauthenticated";
 
-const token = core.getInput("token") || core.getInput("wasmtime-token");
+const token = core.getInput("github_token") || core.getInput("wasmtime-token");
 const octokit = token
   ? github.getOctokit(token)
   : github.getOctokit(token, {
