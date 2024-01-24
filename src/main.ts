@@ -6,7 +6,7 @@ import * as semver from "semver";
 import * as github from "@actions/github";
 import { createUnauthenticatedAuth } from "@octokit/auth-unauthenticated";
 
-const token = core.getInput("token") || core.getInput("wasmtime-token")
+const token = core.getInput("token") || core.getInput("wasmtime-token");
 const octokit = token
   ? github.getOctokit(token)
   : github.getOctokit(token, {
@@ -14,7 +14,9 @@ const octokit = token
       auth: { reason: "no 'wasmtime-token' input" },
     });
 
-let version = core.getInput("version") || core.getInput("wasmtime-version");
+const versionRaw =
+  core.getInput("version") || core.getInput("wasmtime-version");
+let version = versionRaw;
 if (version === "latest") {
   const { data } = await octokit.rest.repos.getLatestRelease({
     owner: "bytecodealliance",
@@ -30,10 +32,7 @@ if (version === "latest") {
   version = semver.maxSatisfying(versions, version)!;
 }
 core.debug(`Resolved version: v${version}`);
-if (!version)
-  throw new DOMException(
-    `${core.getInput("wasmtime-version")} resolved to ${version}`,
-  );
+if (!version) throw new DOMException(`${versionRaw} resolved to ${version}`);
 
 let found = tc.find("wasmtime", version);
 core.setOutput("cache-hit", !!found);
