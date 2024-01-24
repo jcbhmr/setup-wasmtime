@@ -41,6 +41,12 @@ jobs:
 
 - **`wasmtime-token`:** The GitHub token to use when fetching the version list from [bytecodealliance/wasmtime](https://github.com/bytecodealliance/wasmtime/releases). You shouldn't have to touch this. The default is the `github.token` if you're on github.com or unauthenticated (rate limited) if you're not on github.com.
 
+### Outputs
+
+- **`wasmtime-version`:** The version of Wasmtime that was installed. This will be something like `16.0.0` or similar.
+
+- **`cache-hit`:** Whether or not Wasmtime was restored from the runner's cache or download anew.
+
 ## Development
 
 ![Node.js](https://img.shields.io/static/v1?style=for-the-badge&message=Node.js&color=339933&logo=Node.js&logoColor=FFFFFF&label=)
