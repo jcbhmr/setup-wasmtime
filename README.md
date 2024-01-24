@@ -1,10 +1,10 @@
 # Setup Wasmtime
 
-:: [Wasmtime](https://wasmtime.dev/) WebAssembly runtime installer for GitHub Actions
+🧑‍💻 [Wasmtime](https://wasmtime.dev/) WebAssembly runtime installer for GitHub Actions
 
 ## Usage
 
-**:: Here's what you're after:**
+**🚀 Here's what you're after:**
 
 ```yml
 on: push
@@ -14,6 +14,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: jcbhmr/setup-wasmtime@v2.0.0-rc.2
+        with:
+          wasmtime-version: "15.x"
       - run: cargo build --target wasm32-wasi
       - run: wasmtime target/wasm32-wasi/debug/hello_world.wasm
 ```
