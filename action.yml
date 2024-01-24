@@ -1,4 +1,4 @@
-name: Setup Wasmtime 2
+name: Setup Wasmtime
 description: "Set up your GitHub Actions workflow with a specific version of wasmtime"
 
 inputs:
