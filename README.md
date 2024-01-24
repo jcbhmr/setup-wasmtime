@@ -1,6 +1,6 @@
 # Setup Wasmtime
 
-🧑‍💻 [Wasmtime](https://wasmtime.dev/) WebAssembly runtime installer for GitHub Actions
+👩‍💻 [Wasmtime](https://wasmtime.dev/) WebAssembly runtime installer for GitHub Actions
 
 <table align=center><td>
 
