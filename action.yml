@@ -1,5 +1,5 @@
 name: Setup Wasmtime
-description: "Set up your GitHub Actions workflow with a specific version of wasmtime"
+description: 🧑‍💻 Wasmtime WebAssembly runtime installer for GitHub Actions
 
 inputs:
   wasmtime-version:
